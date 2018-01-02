@@ -15,6 +15,7 @@ classdef Helpers
                 end
             end
         end
+        
         function f = Fib(n)
         % FIB Fibonacci.
         % FIB(N) returns the Nth term in the Fibonacci sequence.
@@ -30,6 +31,7 @@ classdef Helpers
                 f = -1;
             end
         end
+        
         function TF = IsPalindrome(n)
             v = Helpers.GetDigits(n);
             s = length(v);
@@ -43,6 +45,7 @@ classdef Helpers
                 end
             end
         end
+        
         function s = NumSize(n)
             s = max(ceil(log10(abs(n))),1);
         end
@@ -62,6 +65,18 @@ classdef Helpers
                 end
                 d(i)=floor(y/10^(s-i));
             end    
+        end
+        
+        function p = GetProduct(s)
+            p = 1;
+            for i=1:strlength(s)
+                if ~str2double(s(i))
+                    p = 0;
+                    break;
+                else
+                    p = p * str2double(s(i));
+                end
+            end
         end
     end
 end
