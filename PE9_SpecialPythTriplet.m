@@ -7,6 +7,8 @@
 % There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 % Find the product abc.
 
+Main()
+
 function f = Main()
     for i=1:998
         for j=2:998
@@ -15,8 +17,9 @@ function f = Main()
                     continue;
                 elseif (i<j) && (j<k)
                     if (i^2+j^2==k^2)
-                        disp([num2str(i) ' ' num2str(j) ' ' num2str(k)]);
+%                         disp([num2str(i) ' ' num2str(j) ' ' num2str(k)]);
                         f = i*j*k;
+                        return % only one solution exists, so the loop can quit
                     end
                 end
             end
